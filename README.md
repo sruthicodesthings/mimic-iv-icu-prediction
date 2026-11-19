@@ -188,3 +188,19 @@ The numbered folders contain detailed README files with file-level navigation an
 - [Artifact duplication and safety audit](docs/ARTIFACT_AUDIT.md)
 
 Refactoring is intentionally conservative: historical scripts and deployed model artifacts are preserved until their import paths and dependencies have been verified.
+
+---
+
+## Recruiter quick read
+
+**Focus:** Clinical ML research, temporal feature engineering, model comparison, and evaluation under realistic prediction constraints.
+
+**Core challenge:** Estimate subsequent ICU-transfer risk without accidentally using information that was unavailable at the prediction landmark. The work examines renal and hospital-wide cohorts, alternative model families, competing outcomes, calibration, and patient-level validation.
+
+**Explore the implementation:** Start with `01_data_preprocessing/` for cohort and temporal feature construction, `03_model_training/` for model families, `04_model_analysis/` for evaluation, `07_validation/` for audits, and `06_streamlit_frontend/` for the interactive demonstration. Curated aggregate figures are indexed in `08_results/README.md`.
+
+**Research rigor:** The repository explicitly distinguishes retrospective cohort definitions from prospectively available features, and it does not treat different experiments as a single comparable benchmark. Results and trained artifacts must be interpreted within their documented data splits, prediction horizons, and limitations.
+
+**Data access and safety:** MIMIC-IV is access-controlled. Do not commit raw patient records, credentials, or derived patient-level extracts. The application is a research demonstration, not clinical decision support.
+
+**Next steps:** Establish a reproducible, single-command synthetic smoke test; document one canonical evaluation protocol; add dataset-provenance checks and model-card-style reporting for the selected demonstration.
